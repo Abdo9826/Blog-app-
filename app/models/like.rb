@@ -7,4 +7,3 @@ class Like < ApplicationRecord
     post.likes_counter += 1
     post.save
   end
-end
