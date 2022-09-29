@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def self.three_most_posts(author_id)
     Post.where(author_id).order(created_at: :desc).limit(3).all
   end
+
+  def admin?
+    role == 'admin'
+  end
 end

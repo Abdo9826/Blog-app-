@@ -8,6 +8,8 @@ class Post < ApplicationRecord
   validates :comments_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
+  load_and_authorize_resource
+
   def update_post_counter
     user.increment!(:posts_counter)
   end
